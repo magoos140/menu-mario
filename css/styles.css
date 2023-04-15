@@ -1,0 +1,139 @@
+body {
+    background-color: rgba(59, 180, 188, 0.3); /* un tono de azul verdoso con 50% de opacidad */
+}
+
+/* Hero */
+
+.hero  {
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 800px;
+    position: relative;
+ }
+
+/* Nav */
+
+.nav{
+    height: 100px;
+    background: #3BB4BC;
+    box-shadow: 0px 6px 22px -3px rgba(0, 0, 0, 0.1);
+}
+
+.nav__container{
+    --padding-container: 0;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    padding-top: 10px;
+}
+
+.nav__hat{
+    width: auto;
+    height: 80px;
+}
+
+.nav__link{
+    margin-left: auto;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 2em;
+}
+
+.nav__links:hover{
+    background-color: #000;
+    display: inline-block;
+    width: 6em;
+    height: 1.3em;
+    text-align: center;
+    border-radius: 10%;
+}
+
+.nav__items{
+    list-style: none;
+}
+
+.nav__links {
+    color: #fff;
+    text-decoration: none;
+    font-size: 50px;
+    font-weight: bold; /* Agrega negrita al texto */
+    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 5px -1px 0 #000, -1px 1px 0 #000; /* Agrega un contorno al texto */
+}
+
+.nav__menu{
+    margin-left: auto;
+    cursor: pointer;
+    display: none;
+}
+
+.nav__img{
+    display: block;
+    width: auto;
+    height: 80px;
+}
+
+.nav__close{
+    height: 80px;
+    display:none;
+}
+
+/* Media queris */
+
+@media (max-width:821px){
+
+    /* *** nav *** */
+    .nav{
+        height: max-content;
+        padding-bottom: 20px;
+        padding-top: 10px;
+    }
+
+    .nav__menu{
+        display: block;
+    }
+
+    .nav__link--menu{
+        position: fixed;
+        background-image: url('../images/luigi.jpg'); /* Aqui cambias la imagen del fondo del menu*/
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: 100;
+        opacity: 0;
+        pointer-events: none;
+        transition: .7s opacity;
+        margin: 0;
+        padding: 0;
+    }
+    
+
+    .nav__link--show{
+        --show: block;
+        opacity:1 ;
+        pointer-events: unset;
+    }
+
+    .nav__close{
+        display: unset;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 50px;
+        cursor: pointer;
+    }
+
+
+    
+}
